@@ -2,11 +2,23 @@
     <header class="album-header">
         <div class="row">
             <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                <p-galleria [images]="images" panelWidth="300" panelHeight="150" showCaption="false"></p-galleria>
+                <app-carousel [slides]="images" ></app-carousel>
             </div>
             <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-
+                <h4 *ngIf="album.artists.length > 0"><span *ngFor="let artist of album.artists">{{artist.name}}</span></h4>
+                <h2>{{album.name}}</h2>
+                <h5>{{album.release_date}}</h5>
+                <a class="btn btn-large btn-block btn-primary" target="_blank" href="{{album.external_urls.spotify}}" role="button">View on Spotify</a>
             </div>
         </div>
     </header>
+    <div class="album-tracks">
+        <h2>Album tracks</h2>
+        <div *ngFor="let track of album.tracks.items">
+            <div class="well">
+                <h5>{{track.track_number}} - {{track.name}}</h5>
+                <a href="{{track.preview_url}}" target="_blank">Preview track</a>
+            </div>
+        </div>
+    </div>
 </div>

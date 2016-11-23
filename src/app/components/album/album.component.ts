@@ -3,11 +3,11 @@ import { Album } from '../../models/album';
 import { SpotifyService } from './../../services/spotify.service';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { GalleriaModule } from 'primeng/primeng';
 
 @Component({
   selector: 'album',
-  templateUrl: 'album.component.html'
+  templateUrl: './album.component.html',
+  styleUrls: ['./album.component.css']
 })
 
 export class AlbumComponent implements OnInit {

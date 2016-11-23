@@ -1,4 +1,3 @@
-import { GalleriaModule } from 'primeng/primeng';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -10,6 +9,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { SearchComponent } from './components/search/search.component';
 import { ArtistComponent } from './components/artist/artist.component';
 import { AlbumComponent } from './components/album/album.component';
+import { CarouselComponent } from './components/carousel/carousel.component';
 
 import { SpotifyService } from './services/spotify.service';
 
@@ -22,14 +22,14 @@ import {AppRouting} from './app.routing';
     NavbarComponent,
     SearchComponent,
     ArtistComponent,
-    AlbumComponent
+    AlbumComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRouting,
-    GalleriaModule
+    AppRouting
   ],
   providers: [ SpotifyService ],
   bootstrap: [AppComponent]
